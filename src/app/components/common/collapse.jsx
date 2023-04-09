@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { Collapse as BsCollapse } from "bootstrap";
 import PropTypes from "prop-types";
 const CollapseWrapper = ({ children, title, name }) => {
-    const [display, setDisaplay] = useState(false);
+    const [display, setDisplay] = useState(false);
     const collapseRef = useRef();
     const toggleDisplay = () => {
-        setDisaplay((prevState) => !prevState);
+        setDisplay((prevState) => !prevState);
     };
     useEffect(() => {
         const newCollapse = new BsCollapse(collapseRef.current, {
@@ -15,16 +15,19 @@ const CollapseWrapper = ({ children, title, name }) => {
     }, [display]);
 
     return (
-        <div className="card  my-2">
+        <div className="card my-2">
             <div className="card-body">
-                <div className="d-flex justify-content-between">
+                <div
+                    className="d-flex justify-content-between"
+                    role="button"
+                    onClick={toggleDisplay}
+                >
                     {title}
                     <i
                         className={
                             "bi bi-caret-" +
                             (!display ? "down-fill" : "up-fill")
                         }
-                        onClick={toggleDisplay}
                     ></i>
                 </div>
                 <div className="collapse" ref={collapseRef} id={name + title}>

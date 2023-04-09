@@ -7,8 +7,8 @@ import BlockQuoteWrapper from "../components/common/blockQuote";
 import Title from "../components/common/typografy/title";
 import Subtitle from "../components/common/typografy/subtitle";
 import Divider from "../components/common/divider";
-import withFunctions from "../components/common/hoc/withFunctions";
-import SimpleComponent from "../components/common/hoc/SimpleComponent";
+import SimpleComponent from "../components/exercises/SimpleComponent";
+import withFunctions from "../components/exercises/withFunctions";
 
 const HOCLayout = () => {
     const ComponentWithHoc = withFunctions(SimpleComponent);

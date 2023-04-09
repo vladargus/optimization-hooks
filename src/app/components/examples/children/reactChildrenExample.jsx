@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import CardWrapper from "../../common/Card";
 import SmallTitle from "../../common/typografy/smallTitle";
@@ -8,9 +8,9 @@ import TextField from "../../common/form/textField";
 const FormComponent = ({ children }) => {
     const [data, setData] = useState({});
 
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
+    // useEffect(() => {
+    //     console.log(data);
+    // }, [data]);
 
     const handleChange = (target) => {
         setData((prevState) => ({ ...prevState, [target.name]: target.value }));

@@ -1,15 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
 import CollapseWrapper from "../common/collapse";
 
 const NumberingComponent = ({ children }) => {
     return React.Children.map(children, (child, index) => {
-        return (
-            <div className="d-flex">
-                <span>{index + 1}.&nbsp;</span>
-                <Component />
-            </div>
-        );
+        return React.cloneElement(child, { num: index + 1 });
     });
+};
+NumberingComponent.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
 };
 
 const ChildrenExercise = () => {
@@ -32,8 +34,11 @@ const ChildrenExercise = () => {
     );
 };
 
-const Component = () => {
-    return <div>Компонент списка</div>;
+const Component = ({ num }) => {
+    return <div>{num}. Компонент списка</div>;
+};
+Component.propTypes = {
+    num: PropTypes.number
 };
 
 export default ChildrenExercise;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CardWrapper from "../Card";
+import CardWrapper from "../common/Card";
 
 const withFunctions = (SimpleComponent) => (props) => {
     const [isAuth, setIsAuth] = useState(false);
