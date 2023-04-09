@@ -35,7 +35,7 @@ const ChildrenExercise = () => {
 };
 
 const Component = ({ num }) => {
-    return <div>{num}. Компонент списка</div>;
+    return <div>Компонент списка {num}</div>;
 };
 Component.propTypes = {
     num: PropTypes.number
